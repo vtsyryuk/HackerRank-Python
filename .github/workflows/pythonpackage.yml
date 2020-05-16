@@ -40,7 +40,7 @@ jobs:
         pip install pytest-cov
         pip install nose
         pip install parameterized
-        pytest tests/test_*.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+        pytest tests/test_*.py --doctest-modules --junitxml=junit/test-results.xml --cov=src --cov-report=xml --cov-report=html
     - name: Install Tox and any other packages
       run: pip install tox
     - name: Run Tox

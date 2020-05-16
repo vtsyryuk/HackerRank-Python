@@ -7,7 +7,7 @@ install:
 
 # Run the unit test
 script:
-  - pytest --doctest-modules --junitxml=junit/test-results.xml --cov=hacker_rank --cov-report=xml --cov-report=html
+  - pytest tests/test_*.py --doctest-modules --junitxml=junit/test-results.xml --cov=hacker_rank --cov-report=xml --cov-report=html
 
 # Push the results back to codecov
 after_success:

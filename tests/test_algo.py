@@ -4,7 +4,7 @@ from nose.tools import assert_equal
 from parameterized import parameterized
 
 
-class AlgoTests(unittest.TestCase):
+class TestAlgo(unittest.TestCase):
     @staticmethod
     def isWeird(n):
         if n % 2 != 0 or 6 <= n <= 20:
@@ -58,16 +58,17 @@ class AlgoTests(unittest.TestCase):
             start = max_width * i
             end = max_width * i + max_width
             lines.append(string[start:end])
-        endRange = max_width * blocks
-        if endRange < length:
-            lines.append(string[endRange:length])
+        end_range = max_width * blocks
+        if end_range < length:
+            lines.append(string[end_range:length])
         return lines
 
     def test_wrap(self):
-        print(self.wrap("ABCDEFGHIJKLIMNOQRSTUVWXYZ", 4))
+        expected = ['ABCD', 'EFGH', 'IJKL', 'IMNO', 'QRST', 'UVWX', 'YZ']
+        assert_equal(expected, self.wrap('ABCDEFGHIJKLIMNOQRSTUVWXYZ', 4))
 
     @staticmethod
-    def sym_diff(self, m, mlist, n, nlist):
+    def sym_diff(mlist, nlist):
         left = set(mlist)
         right = set(nlist)
         diff1 = left.difference(right)
@@ -75,8 +76,9 @@ class AlgoTests(unittest.TestCase):
         return sorted(diff1.union(diff2))
 
     def test_sym_diff(self):
-        assert_equal(sorted({5, 9, 11, 12}), self.sym_diff(self, 4, [2, 4, 2, 9, 5, 9], 4, [2, 4, 11, 12]))
-        assert_equal(sorted({5, 9, 11, 12}), self.sym_diff(self, 4, [2, 4, 11, 9, 2], 4, [2, 4, 5, 12]))
+        assert_equal(sorted({5, 9, 11, 12}), self.sym_diff([2, 4, 2, 9, 5, 9], [2, 4, 11, 12]))
+        assert_equal(sorted({5, 9, 11, 12}), self.sym_diff([2, 4, 11, 9, 2], [2, 4, 5, 12]))
+
 
 if __name__ == '__main__':
     unittest.main()

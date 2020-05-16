@@ -4,4 +4,6 @@
 
 [![codecov](https://codecov.io/gh/vtsyryuk/hacker_rank/branch/master/graph/badge.svg)](https://codecov.io/gh/vtsyryuk/hacker_rank)
 
+![Python package](https://github.com/vtsyryuk/hacker_rank/workflows/Python%20package/badge.svg)
+
 [Requests](https://travis-ci.org/vtsyryuk/hacker_rank/requests)

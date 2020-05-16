@@ -2,7 +2,7 @@ import pickle
 import unittest
 from nose.tools import assert_equal
 
-from src.pnlcalc import HackerRankPnlCalculator
+from hacker_rank.pnlcalc import HackerRankPnlCalculator
 
 
 class TestHackerRankPnlCalculator(unittest.TestCase):

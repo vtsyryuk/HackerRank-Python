@@ -11,5 +11,5 @@ script:
 
 # Push the results back to codecov
 after_success:
-  - python -m codecov - t CODECOV_TOKEN
+  - python -m codecov -t CODECOV_TOKEN
   - bash <(curl -s https://codecov.io/bash) -t CODECOV_TOKEN

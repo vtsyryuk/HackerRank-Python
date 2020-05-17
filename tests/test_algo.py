@@ -76,6 +76,10 @@ class TestAlgo(unittest.TestCase):
         return sorted(diff1.union(diff2))
 
     def test_sym_diff(self):
+        assert_equal([], self.sym_diff([], []))
+        assert_equal([], self.sym_diff([1], [1]))
+        assert_equal([1], self.sym_diff([1], []))
+        assert_equal([1], self.sym_diff([], [1]))
         assert_equal(sorted({5, 9, 11, 12}), self.sym_diff([2, 4, 2, 9, 5, 9], [2, 4, 11, 12]))
         assert_equal(sorted({5, 9, 11, 12}), self.sym_diff([2, 4, 11, 9, 2], [2, 4, 5, 12]))
 

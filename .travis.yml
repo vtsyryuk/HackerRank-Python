@@ -3,13 +3,17 @@ dist: xenial
 python:
   - "3.7"
 install:
-  - pip install -r requirements.txt
-  - pip install coverage
-  - pip install codecov
+    - pip install -r requirements.txt
+    # Install dependencies
+    - pip install coverage pytest pytest-cov
+    - python setup.py test
 
-# Run the unit test
 script:
-  - coverage report -m
+    # Run tests
+    - pytest tests/ --doctest-modules -o junit_family=xunit1 --junitxml=junit/test-results.xml --cov=hacker_rank --cov-report=xml --cov-report=html
+
+    # Generate coverage report in XML format
+    - coverage report -m
 
 # Push the results back to codecov
 after_success:

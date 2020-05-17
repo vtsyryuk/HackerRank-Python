@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='HackerRank-Python',
     version='1.0.0',
-    packages=['hacker_rank'],
+    packages=[''],
     package_dir={'': 'hacker_rank'},
     url='https://github.com/vtsyryuk/HackerRank-Python',
     license='',
